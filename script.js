@@ -1,5 +1,3 @@
-let container = document.querySelector('div#container');
-
 for (let i = 0; i < 16; i++) {
 	let newRow = document.createElement('div');
 	newRow.classList.add('rows');
@@ -19,9 +17,9 @@ const button = document.querySelector('button');
 button.addEventListener('click', function () {
 	let length = prompt('Select the amount of squares for the length of the grid: ');
 	let width = prompt('Select the amount of squares for the width of the grid: ');
-	if (container.hasChildNodes()) {
-		container.removeChild(container.children[0]);
-	}
+	rows.forEach(row => {
+		row.remove();
+	})
 	createColumns(length);
 	createRows(width);
 
