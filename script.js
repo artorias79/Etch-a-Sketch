@@ -17,12 +17,14 @@ const button = document.querySelector('button');
 button.addEventListener('click', function () {
 	let length = prompt('Select the amount of squares for the length of the grid: ');
 	let width = prompt('Select the amount of squares for the width of the grid: ');
+	width = parseInt(width);
+	length = parseInt(length);
+	console.log(length + width);
 	rows.forEach(row => {
 		row.remove();
 	})
 	createColumns(length);
 	createRows(width);
-
 })
 
 function createColumns(length) {
@@ -35,6 +37,7 @@ function createColumns(length) {
 }
 
 function createRows(width) {
+	const rows = document.querySelectorAll('div.rows');
 	rows.forEach(row => {
 		for (let i = 0; i < width; i++) {
 			let newDiv = document.createElement('div');
