@@ -3,6 +3,7 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 30px;
+  background-color: #432616;
 }
 
 button {
@@ -11,8 +12,8 @@ button {
 }
 
 .squares {
-  background-color: blue;
-  border: 1px solid red;
+  background-color: white;
+  border: 1px solid orange;
 }
 
 #container {
@@ -24,4 +25,8 @@ button {
 
 .rows {
   display: flex;
+}
+
+.hover {
+  background-color: black;
 }

@@ -22,10 +22,6 @@ function createLength(length) {
 	})
 }
 
-createHeight(32);
-createLength(32);
-changeSquareSize(32);
-
 function changeSquareSize(amountOfRows) {
 	// change size of squares depending on the length 
 	const squares = document.querySelectorAll('div.squares');
@@ -35,3 +31,37 @@ function changeSquareSize(amountOfRows) {
 		square.style.height = (`${size}px`)
 	})
 }
+
+function highlightSquares() {
+	const squares = document.querySelectorAll('div.squares');
+	squares.forEach(square => {
+		square.addEventListener('mouseover', function () {
+			square.classList.add('hover');
+		})
+	})
+}
+
+function startHover() {
+	const squares = document.querySelectorAll('div.squares');
+	squares.forEach(square => {
+		square.addEventListener('click', function () {
+			highlightSquares();
+		})
+	})
+}
+
+function endHover() {
+	const squares = document.querySelectorAll('div.squares');
+	squares.forEach(square => {
+		square.addEventListener('contextmenu', function () {
+			
+		})
+	})
+}
+
+createHeight(60);
+createLength(60);
+changeSquareSize(60);
+startHover();
+
+
