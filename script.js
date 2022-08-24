@@ -22,5 +22,16 @@ function createLength(length) {
 	})
 }
 
-createHeight(16);
-createLength(16);
+createHeight(32);
+createLength(32);
+changeSquareSize(32);
+
+function changeSquareSize(amountOfRows) {
+	// change size of squares depending on the length 
+	const squares = document.querySelectorAll('div.squares');
+	let size = 960 / amountOfRows;
+	squares.forEach(square => {
+		square.style.width = (`${size}px`)
+		square.style.height = (`${size}px`)
+	})
+}

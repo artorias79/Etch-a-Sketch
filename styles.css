@@ -11,8 +11,6 @@ button {
 }
 
 .squares {
-  width: 60px;
-  height: 60px;
   background-color: blue;
   border: 1px solid red;
 }
