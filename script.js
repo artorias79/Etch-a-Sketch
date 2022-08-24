@@ -32,6 +32,7 @@ function changeSquareSize(amountOfRows) {
 	})
 }
 
+// when squares are hovered over it will highlight only if startHover has been triggered
 function highlightSquares() {
 	const squares = document.querySelectorAll('div.squares');
 	squares.forEach(square => {
@@ -49,19 +50,37 @@ function startHover() {
 		})
 	})
 }
+	function promptGrid() {
+		gridSize = prompt('Select the amount of squares in each row in the grid');
+	}
 
-function endHover() {
-	const squares = document.querySelectorAll('div.squares');
-	squares.forEach(square => {
-		square.addEventListener('contextmenu', function () {
-			
-		})
+function removeSquares() {
+	const rows = document.querySelectorAll('div.rows');
+	rows.forEach(row => {
+		row.remove();
 	})
-}
+	}
 
-createHeight(60);
-createLength(60);
-changeSquareSize(60);
+
+
+
+createHeight(16);
+createLength(16);
+changeSquareSize(16);
 startHover();
+let gridSize;
 
+const button = document.querySelector('button');
+button.addEventListener('click', function () {
+	promptGrid();
+	while (gridSize > 70) {
+		alert('Please select an amount of squares of 70 or less');
+		promptGrid();
+	}
+	removeSquares();
+	createHeight(gridSize);
+	createLength(gridSize);
+	changeSquareSize(gridSize);
+	startHover();
+})
 
